@@ -11,9 +11,10 @@
     {%- for product in collection.products -%}
     <div class="swiper-slide">
     
-<div class="collection_card">
-<h2 class="collection_card_title">{{product.title}}</h2>
-</div>
+{% render'product-cards',
+title : product.title,
+image : product.featured_image
+%}
 
     </div>
 {% endfor%}
@@ -38,8 +39,8 @@ h2.collection_card_title {
         width: 100%;
     }
     .swiper {
-  width: 961px;
-  height: 500px;
+      width: 1302px;
+      height: 656px;
 }
 .collection_card {
     height: 400px;
@@ -53,7 +54,7 @@ h2.collection_card_title {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 80%;
+    height: 100%;
     text-align: center;
 }
 .container_left {
@@ -68,7 +69,7 @@ h2.collection_card_title {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: auto;
+    margin-top: 5%;
 }
 .swiper-button-next{
     display: block !important;
@@ -80,6 +81,20 @@ h2.collection_card_title {
 
 
 @media only screen and (max-width: 600px) {
+
+  .nft-card .nft-card--content{
+  height:430px !important;
+  width: 94%!important ;
+  }
+
+  
+  .collection_title{display:none}
+.collection_copy{display:none}
+.collection_link{display:none}
+
+.container_right{margin:unset !important}
+
+
     .collection_card {
     height: 300px;
     width: 200px;
@@ -91,7 +106,7 @@ h2.collection_card_title {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 89%;
+    height: 100%;
     text-align: center;
 }
 
@@ -272,12 +287,12 @@ h2.collection_card_title {
     breakpoints: {
     // when window width is >= 320px
     320: {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 30
     },
     // when window width is >= 480px
     480: {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 30
     },
     // when window width is >= 640px

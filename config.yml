@@ -1,0 +1,6 @@
+development:
+  password: shptka_183757b6ff3c3226d419af6e8ea30850
+  theme_id: "130685042937"
+  store: edgardo-732.myshopify.com
+  ignore_files:
+    - settings_data.json # Uncomment this line to avoid resetting theme settings
