@@ -1,9 +1,10 @@
 {%- assign collection = collections[section.settings.card_collection] -%}
 <div class="collection_container">
 <div class="container_left">
-    <h1 class="collection_title">collection Title</h1>
-    <p class="collection_copy">collection information</p>
-    <a class="collection_link">find out more</a>
+  <h1 class="collection_title">collection Title</h1>
+  <p class="collection_copy">collection information</p>
+  <a class="collection_link">find out more</a>
+   
 </div>
 <div class="container_right">
     <div class="swiper {{section.settings.swiper_name}}">
@@ -28,7 +29,14 @@
 
 <style>
 
+.nft-card .nft-card--content{
+  height: 460px  !important;
+}
 
+h1.collection_title {
+    margin: unset;
+    margin-top: 2%;
+}
 
 h2.collection_card_title {
     text-align: center;
@@ -38,33 +46,35 @@ h2.collection_card_title {
         width: 100%;
     }
     .swiper {
-      width:1302px;
-      height: 656px;
+      width:100%;
+      height: 100%;
 }
 .collection_card {
     height: 400px;
     width: 260px;
-    
+    border-radius: 10px;
     margin: auto;
     box-shadow: 2px 1px 14px -1px #000000;
 }
 
     .collection_container {
-    display: flex;
-    flex-direction: column;
+    display: row;
+    flex-direction: row;
     width: 100%;
     height: 100%;
     text-align: center;
 }
 .container_left {
-    width: 100%;
+    width: 40%;
+  
     justify-content: center;
     display: flex;
     flex-direction: column;
     padding-left: 5%;
 }
 .container_right {
-    width: 100%;
+
+    width: 60%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -80,12 +90,12 @@ h2.collection_card_title {
 
 
 @media only screen and (max-width: 600px) {
-  .collection_title{display:none}
+
 .collection_copy{display:none}
 .collection_link{display:none}
 
 .nft-card .nft-card--content{
-  height:430px !important;
+  height:400px !important;
   width: 94%!important ;
 
   }
@@ -98,11 +108,13 @@ h2.collection_card_title {
 }
 
 .collection_container {
+  margin-top: 12px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;  
+    height: 100%; 
     text-align: center;
+    margin-bottom: -12px;
 }
 
 .container_left {
@@ -264,8 +276,7 @@ h2.collection_card_title {
   pagination: {
     el: '.swiper-pagination',
   },
-  slidesPerView: 3,
-  spaceBetween: 30,
+ 
   centeredSlides: true,
   // Navigation arrows
   navigation: {
@@ -282,17 +293,17 @@ h2.collection_card_title {
     // when window width is >= 320px
     320: {
       slidesPerView: 1,
-      spaceBetween: 30
+      spaceBetween: 5
     },
     // when window width is >= 480px
     480: {
       slidesPerView: 1,
-      spaceBetween: 30
+      spaceBetween: 5
     },
     // when window width is >= 640px
     640: {
-      slidesPerView: 3,
-      spaceBetween: 30
+      slidesPerView: 2,
+      spaceBetween: 100
     }
   }
 });
